@@ -1,0 +1,402 @@
+/* Apply a sans-serif font to all elements, and ensure box-sizing is border-box */
+* {
+    font-family: sans-serif;
+    margin: 1px;
+    padding: 1px;
+    box-sizing: border-box;
+}
+
+/* Set up the body to display as a flex container with items aligned vertically at the center */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh; /* Ensure the body covers at least the height of the viewport */
+    background-color: #bff6c3c7; /* Set the background color */
+}
+
+/* Add some padding to the container */
+.container {
+    text-align: center;
+    padding: 30px;
+}
+
+/* Add margin below the title */
+.title {
+    margin-bottom: 100px;
+}
+
+/* Set up the flip card container as a flex container with items centered and spaced with a gap */
+.flip-card-container {
+    display: flex;
+    justify-content: center;
+    gap: 100px; /* Add space between flip cards */
+    flex-wrap: wrap; /* Allow the cards to wrap to the next line if needed */
+    margin-bottom: 20px; /* Add margin between rows of flip cards */
+}
+
+/* Style for each flip card */
+.flip-card {
+    width: 100%;
+    max-width: 300px; /* Limit the maximum width of each card */
+    height: 450px; /* Set the height of each card */
+    perspective: 1000px; /* Add perspective for the 3D effect */
+    margin-bottom: 20px; /* Add margin between flip cards */
+}
+
+/* Style for the inner part of the flip card */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s; /* Add smooth transition for flipping effect */
+    transform-style: preserve-3d; /* Preserve 3D transformations */
+}
+
+/* Style for the front and back of each flip card */
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    overflow: hidden; /* Hide any content that overflows the card */
+}
+
+/* Style for the image on the front of each flip card */
+.flip-card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensure the image fits within the card */
+}
+
+/* Style for the back of each flip card */
+.flip-card-back {
+    background-color: #c3f1b0bf;
+    color: #fff;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+    padding: 40px;
+    text-align: center;
+}
+
+/* Style for the image in the back header */
+.flip-card-back .back-header img {
+    width: 100%; /* Increased width of the image */
+    height: 150%; /* Increased height of the image */
+    max-height: 100%; /* Adjusted maximum height of the image */
+    margin-bottom: 0px; /* Add margin below the image */
+}
+
+/* Style for the footer in the back of each flip card */
+.back-footer {
+    margin-top: auto; /* Push the footer to the bottom */
+}
+
+/* Style for the button in the back footer */
+.back-footer a {
+    text-decoration: none;
+    font-size: 20px;
+    background: transparent;
+    border: none;
+    color: #f0f0f0;
+    cursor: pointer;
+    padding: 10px 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+
+/* Background styling for button */
+.back-footer a::after,
+.back-footer a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+/* Styling for button background before hover */
+.back-footer a::before {
+    transform: translate(0%, 0%);
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #3A9188, #3A9188);
+    border-radius: 10px;
+}
+
+/* Styling for button background after hover */
+.back-footer a::after {
+    transform: translate(10px, 10px);
+    width: 35px;
+    height: 35px;
+    background: #ffffff15;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 50px;
+}
+
+/* Hover effect for button background */
+.back-footer a:hover::before {
+    transform: translate(5%, 20%);
+    width: 110%;
+    height: 110%;
+}
+
+/* Hover effect for button */
+.back-footer a:hover::after {
+    border-radius: 10px;
+    transform: translate(0, 0);
+    width: 100%;
+    height: 100%;
+}
+
+/* Active effect for button */
+.back-footer a:active::after {
+    transition: 0s;
+    transform: translate(0, 5%);
+}
+
+/* Flip animation on hover */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Style for the button */
+.button-86 {
+    all: unset;
+    font-size: 20px;
+    background: transparent;
+    border: none;
+    color: #f0f0f0;
+    cursor: pointer;
+    padding: 10px 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    margin-top: 20px; /* Add margin to the top */
+    position: fixed; /* Fixed position to keep it at the top */
+    top: 77%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Background styling for button */
+.button-86::after,
+.button-86::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -1; /* Ensure background is behind the button */
+    transition: all .4s;
+}
+
+/* Styling for button background before hover */
+.button-86::before {
+    transform: translate(0%, 0%);
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #3A9188, #3A9188); /* Gradient background */
+    border-radius: 10px;
+}
+
+/* Styling for button background after hover */
+.button-86::after {
+    transform: translate(10px, 10px);
+    width: 35px;
+    height: 35px;
+    background: #ffffff15;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 50px;
+}
+
+/* Hover effect for button background */
+.button-86:hover::before {
+    transform: translate(5%, 20%);
+    width: 110%;
+    height: 110%;
+}
+
+/* Hover effect for button */
+.button-86:hover::after {
+    border-radius: 10px;
+    transform: translate(0, 0);
+    width: 100%;
+    height: 100%;
+}
+
+/* Active effect for button */
+.button-86:active::after {
+    transition: 0s;
+    transform: translate(0, 5%);
+}
+
+/* Resetting default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Styling for the welcome section */
+.welcome {
+    background-image: linear-gradient(#ff5722, #ffc107);
+    position: relative;
+    height: 100vh; /* Set the height to cover the viewport */
+    overflow: hidden; /* Hide overflow */
+    font-family: sans-serif;
+}
+
+/* Styling for the heading */
+h1 {
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 70px;
+    z-index: 1;
+}
+
+/* Styling for the list items */
+ul li {
+    position: absolute;
+    border: 1px solid #fff;
+    width: 30px;
+    height: 30px;
+    list-style: none;
+    opacity: 0;
+    background: #fff;
+}
+
+/* Styling for square animation */
+.square li {
+    top: 50vh;
+    left: 45vw;
+    animation: square 10s linear infinite;
+}
+
+.square li:nth-child(2) {
+    top: 80vh;
+    left: 10vw;
+    animation-delay: 2s;
+}
+
+.square li:nth-child(3) {
+    top: 80vh;
+    left: 85vw;
+    animation-delay: 4s;
+}
+
+.square li:nth-child(4) {
+    top: 10vh;
+    left: 70vw;
+    animation-delay: 6s;
+}
+
+.square li:nth-child(5) {
+    top: 10vh;
+    left: 70vw;
+    animation-delay: 8s;
+}
+
+/* Square animation keyframes */
+@keyframes square {
+    0% {
+        transform: scale(0) rotateY(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(5) rotateY(1000deg);
+        opacity: 0;
+    }
+}
+
+/* Styling for circle animation */
+.circle li {
+    bottom: 0;
+    left: 15vw;
+    animation: circle 10s linear infinite;
+}
+
+.circle li:nth-child(2) {
+    left: 35vw;
+    animation-delay: 1.5s;
+}
+
+.circle li:nth-child(3) {
+    left: 55vw;
+    animation-delay: 4s;
+}
+
+.circle li:nth-child(4) {
+    left: 75vw;
+    animation-delay: 2s;
+}
+
+.circle li:nth-child(5) {
+    left: 90vw; /* Fixed the typo here */
+    animation-delay: 6s;
+}
+
+/* Circle animation keyframes */
+@keyframes circle {
+    0% {
+        transform: scale(0) rotate(0deg);
+        opacity: 1;
+        bottom: 0;
+        border-radius: 0;
+    }
+    100% {
+        transform: scale(5) rotate(1000deg);
+        opacity: 0;
+        bottom: 90vh;
+        border-radius: 50%;
+    }
+}
+
+.text {
+    position: relative;
+    top: 10%; 
+    right: 50%;
+    transform: translate(50%,-20%);
+    text-transform: uppercase;
+    font-family: verdana;
+    font-size: 5em;
+    font-weight: 700;
+    color: #f5f5f5;
+    text-shadow: 1px 1px 1px #919191,
+        1px 2px 1px #919191,
+        1px 3px 1px #919191,
+        1px 4px 1px #919191,
+        1px 5px 1px #919191,
+        1px 6px 1px #919191,
+        1px 7px 1px #919191,
+        1px 8px 1px #919191,
+        1px 9px 1px #919191,
+        1px 10px 1px #919191,
+        1px 18px 6px rgba(16,16,16,0.4),
+        1px 22px 10px rgba(16,16,16,0.2),
+        1px 25px 35px rgba(16,16,16,0.2),
+        1px 30px 60px rgba(16,16,16,0.4);
+    margin-bottom: 30px; /* Reduce space below the text */
+}

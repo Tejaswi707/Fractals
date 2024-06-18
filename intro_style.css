@@ -1,0 +1,162 @@
+/* Ensure box-sizing and font family are applied */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Styling for the hero section */
+.hero {
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(images/back-image.jpg);
+    background-position: center;
+    background-size: cover;
+    padding: 10px 10%;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Styling for the navigation bar */
+nav {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Styling for the logo */
+nav .logo {
+    width: 140px;
+    cursor: pointer;
+}
+
+/* Styling for the navigation list */
+nav ul {
+    flex: 1;
+    text-align: right;
+    margin-right: 150px;
+}
+
+/* Styling for the list items in the navigation */
+nav ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 10px 15px;
+}
+
+/* Styling for the links in the list items */
+nav ul li a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 700;
+    position: relative;
+    padding: 10px;
+}
+
+/* Initial styling for the semi-transparent pink background on the links */
+nav ul li a::before {
+    content: '';
+    width: 100%;
+    height: 0;
+    background: rgba(174, 37, 149, 0.262); /* Semi-transparent pink */
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    transition: height 0.5s;
+}
+
+/* Hover effect for the semi-transparent pinky shade background */
+nav ul li a:hover::before {
+    height: 85px;
+}
+
+/* Styling for the login button */
+.login-btn {
+    text-decoration: none;
+    color: #333;
+    margin-right: 15px;
+    font-weight: 400;
+}
+
+/* Styling for the main buttons */
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 14px 40px;
+    color: #fff;
+    background-image: linear-gradient(45deg, #df4881, #c430d7);
+    font-size: 14px;
+    border-radius: 30px;
+    border-top-right-radius: 0;
+    transition: 0.5s;
+}
+
+/* Styling for the content section */
+.content {
+    margin-top: 0%; /* Adjusted margin-top to move the text up */
+    max-width: 600px;
+}
+
+/* Styling for the main heading */
+.content h1 {
+    font-size: 70px;
+    color: #222;
+}
+
+/* Styling for the paragraph */
+.content p {
+    margin: 10px 0 30px;
+    color: #333;
+    animation-delay: 0.5s;
+}
+
+/* Additional styling for buttons within the content */
+.content .btn {
+    padding: 15px 80px;
+    font-size: 16px;
+    animation-delay: 0.5s;
+}
+
+/* Hover effect for the main buttons */
+.btn:hover {
+    border-top-left-radius: 30px;
+}
+
+/* Styling for the feature image */
+.feature-img {
+    width: 450px;
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+}
+
+/* Additional animation delay for the feature image */
+.feature-img.anim {
+    animation-delay: 0.7s;
+}
+
+/* Base animation class */
+.anim {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: moveup 0.5s linear forwards;
+}
+
+/* Keyframes for the moveup animation */
+@keyframes moveup {
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+/* New class for styling the quotation */
+.quotation {
+    font-weight: bold;
+    font-size: 19px; /* Adjust the size as needed */
+    color: #333;
+}

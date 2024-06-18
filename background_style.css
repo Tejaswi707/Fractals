@@ -1,0 +1,111 @@
+/* Resetting default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Styling for the welcome section */
+.welcome {
+    background-image: linear-gradient(#ff5722, #ffc107);
+    position: relative;
+    height: 100vh; /* Set the height to cover the viewport */
+    overflow: hidden; /* Hide overflow */
+    font-family: sans-serif;
+}
+
+/* Styling for the list items */
+ul li {
+    position: absolute;
+    border: 1px solid #fff;
+    width: 30px;
+    height: 30px;
+    list-style: none;
+    opacity: 0;
+    background: #fff;
+}
+
+/* Styling for square animation */
+.square li {
+    top: 50vh;
+    left: 45vw;
+    animation: square 10s linear infinite;
+}
+
+.square li:nth-child(2) {
+    top: 80vh;
+    left: 10vw;
+    animation-delay: 2s;
+}
+
+.square li:nth-child(3) {
+    top: 80vh;
+    left: 85vw;
+    animation-delay: 4s;
+}
+
+.square li:nth-child(4) {
+    top: 10vh;
+    left: 70vw;
+    animation-delay: 6s;
+}
+
+.square li:nth-child(5) {
+    top: 10vh;
+    left: 70vw;
+    animation-delay: 8s;
+}
+
+/* Square animation keyframes */
+@keyframes square {
+    0% {
+        transform: scale(0) rotateY(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(5) rotateY(1000deg);
+        opacity: 0;
+    }
+}
+
+/* Styling for circle animation */
+.circle li {
+    bottom: 0;
+    left: 15vw;
+    animation: circle 10s linear infinite;
+}
+
+.circle li:nth-child(2) {
+    left: 35vw;
+    animation-delay: 1.5s;
+}
+
+.circle li:nth-child(3) {
+    left: 55vw;
+    animation-delay: 4s;
+}
+
+.circle li:nth-child(4) {
+    left: 75vw;
+    animation-delay: 2s;
+}
+
+.circle li:nth-child(2) {
+    left: 90vw; /* Fixed the typo here */
+    animation-delay: 6s;
+}
+
+/* Circle animation keyframes */
+@keyframes circle {
+    0% {
+        transform: scale(0) rotate(0deg);
+        opacity: 1;
+        bottom: 0;
+        border-radius: 0;
+    }
+    100% {
+        transform: scale(5) rotate(1000deg);
+        opacity: 0;
+        bottom: 90vh;
+        border-radius: 50%;
+    }
+}

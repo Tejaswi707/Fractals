@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Border Gallery</title>
+    <link rel="stylesheet" href="collections_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="wrapper">
+      <a href="gallery1_index.html" style="text-decoration: none; cursor: pointer; color: white;">
+        <i class="fas fa-arrow-left"></i>
+    </a>
+  
+    <nav>
+      <div class="items">
+        <a href="floral1.html"><span class="item" data-name="floral">Floral</span></a>
+        <a href="leaves1.html"><span class="item" data-name="leaves">Leaves</span></a>
+        <a href="stripes1.html"><span class="item" data-name="stripes">Stripes</span></a>
+        <a href="checks1.html"><span class="item" data-name="checks">Checks</span></a>
+        <a href="mesh1.html"><span class="item" data-name="mesh">Mesh</span></a>
+        <a href="border1.html"><span class="item active" data-name="border">Border</span></a>
+      </div>
+    </nav>
+    <div class="gallery">
+      <div class="category" data-category="border">
+        <!-- Add <img> tags for the stripes images here -->
+        <script>
+          for(let i=1;i<=20;i++)
+          {
+             document.write(`<div class="image" data-name="border"><span><a href="images/border/b${i}.png"><img src="images/border/b${i}.png" alt="Border ${i}"></a></span></div>`)
+          }
+         </script>
+      </div>
+    </div>
+  </div>
+  <!-- fullscreen img preview box -->
+  <div class="preview-box">
+    <div class="details">
+      <span class="title">Image Category: <p></p></span>
+      <span class="icon fas fa-times"></span>
+    </div>
+    <div class="image-box"><img src="" alt=""></div>
+  </div>
+  <div class="shadow"></div>
+
+  <script src="collections_script.js"></script>
+
+</body>
+</html>
+
+
+<!-- ee file css ekkada? -->
